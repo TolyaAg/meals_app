@@ -7,30 +7,25 @@ import 'package:mealsapp/widget/category_item.dart';
 class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('DeliMeal'),
+    return GridView(
+      padding: EdgeInsets.symmetric(
+        vertical: 25,
+        horizontal: 15,
       ),
-      body: GridView(
-        padding: EdgeInsets.symmetric(
-          vertical: 25,
-          horizontal: 15,
-        ),
-        children: DUMMY_CATEGORIES
-            .map(
-              (data) => CategoryItem(
-                data.id,
-                data.title,
-                data.color,
-              ),
-            )
-            .toList(),
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 200,
-          childAspectRatio: 3 / 2,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20,
-        ),
+      children: DUMMY_CATEGORIES
+          .map(
+            (data) => CategoryItem(
+              data.id,
+              data.title,
+              data.color,
+            ),
+          )
+          .toList(),
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 200,
+        childAspectRatio: 3 / 2,
+        crossAxisSpacing: 20,
+        mainAxisSpacing: 20,
       ),
     );
   }
