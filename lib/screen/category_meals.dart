@@ -33,12 +33,6 @@ class _CategoryMealsState extends State<CategoryMeals> {
     super.didChangeDependencies();
   }
 
-  void _removeMeal(id) {
-    setState(() {
-      categoryMeals.removeWhere((meal) => meal.id == id);
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
